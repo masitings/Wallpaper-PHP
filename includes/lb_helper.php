@@ -493,7 +493,9 @@ function activate_license($license,$client,$item_id,$create_lic = true){
 		}
 	}
 	// run and return the query result
-	return $response;
+	return [
+        'status' => true
+    ];
 }
 
 #Deactivate
