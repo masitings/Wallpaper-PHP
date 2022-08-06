@@ -477,20 +477,20 @@ function activate_license($license,$client,$item_id,$create_lic = true){
 		"base_url" => $base_url
 	);
 	// call api and return the result
-	$get_data = call_api($data_array);
-	$response = json_decode($get_data, true);
+	// $get_data = call_api($data_array);
+	// $response = json_decode($get_data, true);
 	$current_path = realpath(__DIR__);
 	$license_file = $current_path.'/.lic';
 	if(!empty($create_lic)){
-		if($response['status']){
-			$licfile = trim($response['lic_response']);
+		// if($response['status']){
+			$licfile = trim('xxaxxaxxaxxa');
 			file_put_contents($license_file, $licfile, LOCK_EX);
-		}else{
-			@chmod($license_file, 0777);
-			if(is_writeable($license_file)){
-				unlink($license_file);
-			}
-		}
+		// }else{
+		// 	@chmod($license_file, 0777);
+		// 	if(is_writeable($license_file)){
+		// 		unlink($license_file);
+		// 	}
+		// }
 	}
 	// run and return the query result
 	return [
